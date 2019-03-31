@@ -75,11 +75,34 @@ To configure workflows, head to the [workflows page](workflows/README.md).
 
 ## Start the app
 
-To start Synapse, run:
+First before starting Synapse you must generate the service:
 
 ```
-python3 app.py
+vim /usr/lib/systemd/system/synapse.service
+[Unit]
+Description=Service Synapse
+
+[Service]
+ExecStart=/root/Synapse/synapse.sh
+StandardOutput=null
+
+[Install]
+WantedBy=multi-user.target
+Alias=synapse.service
 ```
+
+systemctl daemon-reload
+
+```
+vim /opt/Synapse/synapse.sh
+#!/bin/sh
+#
+python3 /opt/Synapse/app.py
+```
+
+chmod +x /opt/Synapse/synapse.sh
+
+systemctl start synapse.service
 
 ## Deployment to Production
 
