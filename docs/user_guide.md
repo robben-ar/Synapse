@@ -25,6 +25,7 @@ sudo apt install python3-distutils
 sudo apt install python3-pip
 sudo apt install python3-dev libkrb5-dev gcc
 sudo pip3 install -r requirements.txt
+cd /opt/ & git clone https://github.com/TheHive-Project/Synapse/
 ```
 
 ## Configuration
@@ -41,7 +42,7 @@ Additional Permissions:    ✓ Allow alerts creation
 
 And create an API Key.   
 
-Now edit the configuration file located at ```Synapse/conf/synapse.conf```.
+Now edit the configuration file located at ```/opt/Synapse/conf/synapse.conf```.
 
 ### [api] section
 
@@ -83,7 +84,7 @@ vim /usr/lib/systemd/system/synapse.service
 Description=Service Synapse
 
 [Service]
-ExecStart=/root/Synapse/synapse.sh
+ExecStart=/opt/Synapse/synapse.sh
 StandardOutput=null
 
 [Install]
