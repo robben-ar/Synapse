@@ -27,7 +27,7 @@ The [user guide](docs/user_guide.md) should contain all the information you need
 
    1. Install dependencies
    2. Fill in the config file
-   3. Execute: ```python3 app.py```
+   3. Execute: service synapse start
 
 While all operating systems running Python 3 can be used for Synapse, we recommend the use of Ubuntu.   
 
